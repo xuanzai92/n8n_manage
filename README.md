@@ -68,11 +68,34 @@ n8n_manage_system/
 ## 🚀 快速开始
 
 ### 环境要求
-- Node.js 18+
+- Node.js 18+ (本地开发)
 - PostgreSQL 数据库
 - Git
+- Docker & Docker Compose (Docker 部署)
 
-### 本地开发
+### 方式一：Docker 部署 (推荐)
+
+1. **克隆项目**
+```bash
+git clone <repository-url>
+cd n8n_manage_system
+```
+
+2. **使用 Docker 启动**
+```bash
+# 使用启动脚本
+./scripts/docker-start.sh
+
+# 或手动启动
+docker-compose up -d
+```
+
+3. **访问应用**
+- 前端: http://localhost:3000
+- 后端管理: http://localhost:1337/admin
+- 数据库: localhost:5432
+
+### 方式二：本地开发
 
 1. **克隆项目**
 ```bash
@@ -94,6 +117,28 @@ cd backend && npm run develop
 
 # 启动前端
 cd frontend && npm run dev
+```
+
+### Docker 常用命令
+
+```bash
+# 启动服务
+docker-compose up -d
+
+# 查看日志
+docker-compose logs -f
+
+# 停止服务
+docker-compose down
+
+# 重启服务
+docker-compose restart
+
+# 清理数据
+docker-compose down -v
+
+# 重新构建
+docker-compose build --no-cache
 ```
 
 ## �� 许可证
