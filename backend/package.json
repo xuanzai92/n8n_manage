@@ -1,0 +1,56 @@
+{
+  "name": "n8n-manage-backend",
+  "version": "1.0.0",
+  "description": "n8n 管理平台后端 API",
+  "private": true,
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "postinstall": "node ./scripts/postinstall.js"
+  },
+  "dependencies": {
+    "@strapi/plugin-i18n": "4.20.0",
+    "@strapi/plugin-users-permissions": "4.20.0",
+    "@strapi/strapi": "4.20.0",
+    "axios": "^1.6.0",
+    "crypto-js": "^4.2.0",
+    "lodash": "^4.17.0",
+    "moment": "^2.29.0",
+    "pg": "^8.11.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^5.3.4",
+    "scheduler": "^0.26.0",
+    "styled-components": "^5.3.11"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/supertest": "^2.0.0",
+    "eslint": "^8.0.0",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.0"
+  },
+  "author": {
+    "name": "Your Name"
+  },
+  "strapi": {
+    "uuid": "n8n-manage-system"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "overrides": {
+    "sharp": {
+      "libvips": "8.14.5"
+    }
+  }
+}
