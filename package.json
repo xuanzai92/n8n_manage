@@ -1,48 +1,40 @@
 {
-  "name": "n8n-manage-system",
-  "version": "1.0.0",
-  "description": "基于 Strapi 的 n8n 管理平台",
+  "name": "n8n_manage",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "backend"
-  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
-    "dev:backend": "cd backend && npm run develop",
-    "dev:frontend": "cd frontend && npm run dev",
-    "build": "npm run build:backend && npm run build:frontend",
-    "build:backend": "cd backend && npm run build",
-    "build:frontend": "cd frontend && npm run build",
-    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "setup": "npm run install:all && npm run setup:backend",
-    "setup:backend": "cd backend && npm run strapi develop",
-    "lint": "npm run lint:frontend && npm run lint:backend",
-    "lint:frontend": "cd frontend && npm run lint",
-    "lint:backend": "cd backend && npm run lint",
-    "test": "npm run test:frontend && npm run test:backend",
-    "test:frontend": "cd frontend && npm run test",
-    "test:backend": "cd backend && npm run test"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.13.0",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-dropdown-menu": "^2.1.15",
+    "@radix-ui/react-toast": "^1.2.14",
+    "@tanstack/react-query": "^5.84.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.539.0",
+    "next": "15.4.6",
+    "prisma": "^6.13.0",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-query": "^3.39.3",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^4.0.16"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
-  },
-  "keywords": [
-    "n8n",
-    "strapi",
-    "workflow",
-    "management",
-    "nextjs",
-    "typescript"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/n8n-manage-system.git"
-  },
-  "bugs": {
-    "url": "https://github.com/yourusername/n8n-manage-system/issues"
-  },
-  "homepage": "https://github.com/yourusername/n8n-manage-system#readme"
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.20.3",
+    "typescript": "^5"
+  }
 }

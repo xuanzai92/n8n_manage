@@ -1,146 +1,36 @@
-# n8n 管理平台
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-基于 Strapi 的 n8n 工作流管理系统，提供多租户、多用户的工作流管理、执行监控和审计功能。
+## Getting Started
 
-## 🚀 项目概述
-
-n8n 管理平台是一个企业级的工作流管理系统，允许用户绑定自己的 n8n 实例，通过统一的 Web 界面管理工作流、监控执行状态、查看历史记录。
-
-### 核心功能
-
-- **用户管理**: 用户注册、登录、权限控制
-- **n8n 实例绑定**: 用户绑定自己的 n8n 服务
-- **工作流管理**: 查看、筛选、搜索工作流
-- **执行控制**: 触发工作流执行、查看执行状态
-- **历史记录**: 查看执行历史、详细日志
-- **审计日志**: 记录用户操作、系统事件
-- **多租户支持**: 组织级别的数据隔离
-
-## 🏗️ 架构设计
-
-### 技术栈
-
-**前端**: Next.js 14 + React 18 + Ant Design + TypeScript
-**后端**: Strapi 4.x + PostgreSQL + JWT 认证
-**数据库**: Supabase PostgreSQL
-**部署**: Vercel (前端) + Railway (后端)
-
-## 📁 项目结构
-
-```
-n8n_manage_system/
-├── frontend/                 # 前端应用
-├── backend/                  # Strapi 后端
-├── docs/                     # 文档
-├── scripts/                  # 脚本文件
-└── README.md
-```
-
-## 🛠️ 开发路径
-
-### 第一阶段：基础架构搭建 (1-2周)
-- 项目初始化和环境配置
-- Strapi 后端基础搭建
-- Next.js 前端基础搭建
-
-### 第二阶段：核心功能开发 (3-4周)
-- 用户认证系统
-- n8n 实例管理
-- 工作流管理功能
-
-### 第三阶段：执行控制功能 (2-3周)
-- 工作流执行触发
-- 执行状态监控
-- 历史记录管理
-
-### 第四阶段：管理功能 (2-3周)
-- 审计日志系统
-- 管理员功能界面
-
-### 第五阶段：多租户支持 (2-3周)
-- 租户模型设计
-- 多租户数据隔离
-
-### 第六阶段：优化和部署 (1-2周)
-- 性能优化
-- 生产环境部署
-
-## 🚀 快速开始
-
-### 环境要求
-- Node.js 18+ (本地开发)
-- PostgreSQL 数据库
-- Git
-- Docker & Docker Compose (Docker 部署)
-
-### 方式一：Docker 部署 (推荐)
-
-1. **克隆项目**
-```bash
-git clone <repository-url>
-cd n8n_manage_system
-```
-
-2. **使用 Docker 启动**
-```bash
-# 使用启动脚本
-./scripts/docker-start.sh
-
-# 或手动启动
-docker-compose up -d
-```
-
-3. **访问应用**
-- 前端: http://localhost:3000
-- 后端管理: http://localhost:1337/admin
-- 数据库: localhost:5432
-
-### 方式二：本地开发
-
-1. **克隆项目**
-```bash
-git clone <repository-url>
-cd n8n_manage_system
-```
-
-2. **安装依赖**
-```bash
-npm install
-cd frontend && npm install
-cd ../backend && npm install
-```
-
-3. **启动开发环境**
-```bash
-# 启动后端
-cd backend && npm run develop
-
-# 启动前端
-cd frontend && npm run dev
-```
-
-### Docker 常用命令
+First, run the development server:
 
 ```bash
-# 启动服务
-docker-compose up -d
-
-# 查看日志
-docker-compose logs -f
-
-# 停止服务
-docker-compose down
-
-# 重启服务
-docker-compose restart
-
-# 清理数据
-docker-compose down -v
-
-# 重新构建
-docker-compose build --no-cache
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## �� 许可证
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-MIT License
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
