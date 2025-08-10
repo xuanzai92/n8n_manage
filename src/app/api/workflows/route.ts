@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { z } from 'zod'
 import { prisma } from '@/lib/prisma'
 import { handleApiError, createApiResponse } from '@/lib/api'
+import { Prisma } from '@prisma/client'
 
 const createWorkflowSchema = z.object({
   instanceId: z.number().int().positive('请选择实例'),
@@ -27,7 +28,8 @@ export async function GET(request: NextRequest) {
     const active = searchParams.get('active')
     const project = searchParams.get('project')
     
-    const where: any = {}
+    // 使用正确的 Prisma 类型替代 any
+    const where: Prisma.WorkflowWhereInput = {}
     if (instanceId) where.instanceId = parseInt(instanceId)
     if (active !== null) where.active = active === 'true'
     if (project) where.project = project

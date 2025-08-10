@@ -69,7 +69,7 @@ export function TestConnectionDialog({
             <span>连接测试</span>
           </DialogTitle>
           <DialogDescription>
-            测试与实例 "{instance.name}" 的连接状态
+            测试与实例 &quot;{instance.name}&quot; 的连接状态
           </DialogDescription>
         </DialogHeader>
 

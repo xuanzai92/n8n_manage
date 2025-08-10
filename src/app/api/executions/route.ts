@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { z } from 'zod'
+import { Prisma } from '@prisma/client'
 
 const querySchema = z.object({
   page: z.string().optional().default('1'),
@@ -21,17 +22,15 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(query.limit)
     const skip = (page - 1) * limit
 
-    // 构建查询条件
-    const where: any = {}
+    // 使用正确的 Prisma 类型替代 any
+    const where: Prisma.ExecutionWhereInput = {}
     
     if (query.workflowId) {
       where.workflowId = parseInt(query.workflowId)
     }
     
     if (query.instanceId) {
-      where.workflow = {
-        instanceId: parseInt(query.instanceId)
-      }
+      where.instanceId = parseInt(query.instanceId)
     }
     
     if (query.status) {
@@ -39,12 +38,12 @@ export async function GET(request: NextRequest) {
     }
     
     if (query.startDate || query.endDate) {
-      where.startedAt = {}
+      where.startTime = {}
       if (query.startDate) {
-        where.startedAt.gte = new Date(query.startDate)
+        where.startTime.gte = new Date(query.startDate)
       }
       if (query.endDate) {
-        where.startedAt.lte = new Date(query.endDate)
+        where.startTime.lte = new Date(query.endDate)
       }
     }
 

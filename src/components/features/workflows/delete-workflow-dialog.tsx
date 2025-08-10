@@ -61,7 +61,7 @@ export function DeleteWorkflowDialog({
             <span>删除工作流</span>
           </DialogTitle>
           <DialogDescription>
-            您确定要删除工作流 "{workflow.name}" 吗？
+            您确定要删除工作流 &quot;{workflow.name}&quot; 吗？
             <br />
             <span className="text-red-600 font-medium">
               此操作将同时删除该工作流的所有执行记录，且无法撤销。

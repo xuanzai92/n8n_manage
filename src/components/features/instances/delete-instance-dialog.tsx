@@ -61,7 +61,7 @@ export function DeleteInstanceDialog({
             <span>删除实例</span>
           </DialogTitle>
           <DialogDescription>
-            确定要删除实例 "{instance.name}" 吗？
+            确定要删除实例 &quot;{instance.name}&quot; 吗？
             <br />
             <span className="text-red-600 font-medium">
               此操作将同时删除该实例下的所有工作流和执行记录，且无法恢复。
