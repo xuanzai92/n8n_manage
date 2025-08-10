@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { MainLayout } from "@/components/layout/main-layout";
+import { Toaster } from '@/components/ui/sonner'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,13 +14,14 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
-    <html lang="zh-CN">
-      <body className={inter.className} suppressHydrationWarning={true}>
-        <MainLayout>{children}</MainLayout>
+    <html lang="en">
+      <body>
+        {children}
+        <Toaster />
       </body>
     </html>
-  );
+  )
 }
